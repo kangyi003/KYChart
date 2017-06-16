@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KYTestCurveChartViewController">
+            <connections>
+                <outlet property="chartView" destination="Mdg-yY-khs" id="Dgn-NQ-ino"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mdg-yY-khs" customClass="KYCurveChartView">
+                    <rect key="frame" x="8" y="20" width="359" height="237"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="237" id="a13-HN-0FU"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgr-29-HaX">
+                    <rect key="frame" x="16" y="318" width="343" height="44"/>
+                    <color key="backgroundColor" red="0.13688616071428572" green="0.16389508928571428" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="49T-du-CQz"/>
+                    </constraints>
+                    <state key="normal" title="两条曲线">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="twoPlot:" destination="-1" eventType="touchUpInside" id="z2f-nj-m3f"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Jj-e5-IJF">
+                    <rect key="frame" x="16" y="378" width="343" height="44"/>
+                    <color key="backgroundColor" red="1" green="0.14707031249999999" blue="0.15770089285714287" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="DC6-5V-zl1"/>
+                    </constraints>
+                    <state key="normal" title="一条曲线无动画"/>
+                    <connections>
+                        <action selector="onePlot:" destination="-1" eventType="touchUpInside" id="YpC-qr-Kqa"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="he5-EW-82h">
+                    <rect key="frame" x="16" y="438" width="343" height="44"/>
+                    <color key="backgroundColor" red="0.015262276785714285" green="0.8151506696428571" blue="0.43683035714285712" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="zdJ-xj-F34"/>
+                    </constraints>
+                    <state key="normal" title="Y轴显示百分比"/>
+                    <connections>
+                        <action selector="persentage:" destination="-1" eventType="touchUpInside" id="y1E-lt-Knr"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Mdg-yY-khs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="0Lc-aO-YBY"/>
+                <constraint firstItem="cgr-29-HaX" firstAttribute="top" secondItem="Mdg-yY-khs" secondAttribute="bottom" constant="61" id="3pC-40-9oC"/>
+                <constraint firstItem="4Jj-e5-IJF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="9EE-NH-unC"/>
+                <constraint firstAttribute="trailing" secondItem="he5-EW-82h" secondAttribute="trailing" constant="16" id="BVY-dp-6WW"/>
+                <constraint firstItem="he5-EW-82h" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="KRS-eh-fhV"/>
+                <constraint firstAttribute="trailing" secondItem="4Jj-e5-IJF" secondAttribute="trailing" constant="16" id="N8B-pc-Dy8"/>
+                <constraint firstItem="Mdg-yY-khs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="QVw-jo-0Z1"/>
+                <constraint firstAttribute="trailing" secondItem="Mdg-yY-khs" secondAttribute="trailing" constant="8" id="cVa-RZ-jOr"/>
+                <constraint firstItem="he5-EW-82h" firstAttribute="top" secondItem="4Jj-e5-IJF" secondAttribute="bottom" constant="16" id="cmD-RX-Iz5"/>
+                <constraint firstItem="4Jj-e5-IJF" firstAttribute="top" secondItem="cgr-29-HaX" secondAttribute="bottom" constant="16" id="gSk-Ao-MxS"/>
+                <constraint firstItem="cgr-29-HaX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="l5v-iy-GSv"/>
+                <constraint firstAttribute="trailing" secondItem="cgr-29-HaX" secondAttribute="trailing" constant="16" id="ulL-Yw-aQi"/>
+            </constraints>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
+        </view>
+    </objects>
+</document>
