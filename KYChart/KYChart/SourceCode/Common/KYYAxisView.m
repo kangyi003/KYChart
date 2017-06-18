@@ -8,7 +8,7 @@
 
 #import "KYYAxisView.h"
 #import "KYChartDefine.h"
-
+#import "KYAxis.h"
 
 #define YTitleWidth 40
 

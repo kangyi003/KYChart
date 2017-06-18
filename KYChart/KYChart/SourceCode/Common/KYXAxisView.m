@@ -8,6 +8,7 @@
 
 #import "KYXAxisView.h"
 #import "KYChartDefine.h"
+#import "KYAxis.h"
 
 #define xAxisTitleHeight 30
 @implementation KYXAxisView

@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KYAxis.h"
 
+@class KYXAxis;
 @interface KYXAxisView : UIView
 @property (nonatomic,strong)KYXAxis *xAxis;
 

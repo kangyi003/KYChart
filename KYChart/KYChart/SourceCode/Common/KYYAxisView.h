@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KYAxis.h"
 
+@class KYYAxis;
 @interface KYYAxisView : UIView
 
 /// 是否显示Y轴线，默认为NO不显示
