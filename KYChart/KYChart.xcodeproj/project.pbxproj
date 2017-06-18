@@ -26,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC0611111EF6359A00936934 /* KYAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYAxis.h; sourceTree = "<group>"; };
+		AC0611121EF6359A00936934 /* KYCurveChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYCurveChartView.h; sourceTree = "<group>"; };
+		AC0611131EF6359A00936934 /* KYPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYPlot.h; sourceTree = "<group>"; };
 		AC392DE51EF27CDE007875D0 /* KYTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYTipView.h; sourceTree = "<group>"; };
 		AC392DE61EF27CDE007875D0 /* KYTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYTipView.m; sourceTree = "<group>"; };
 		AC3B70CE1EF165E200A0E96E /* KYChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KYChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,13 +41,10 @@
 		AC3B70E21EF165E200A0E96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC3B70EF1EF1669C00A0E96E /* KYTestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYTestTableViewController.h; sourceTree = "<group>"; };
 		AC3B70F01EF1669C00A0E96E /* KYTestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYTestTableViewController.m; sourceTree = "<group>"; };
-		AC3B71081EF167BE00A0E96E /* KYAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYAxis.h; sourceTree = "<group>"; };
 		AC3B71091EF167BE00A0E96E /* KYAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYAxis.m; sourceTree = "<group>"; };
 		AC3B710B1EF167BE00A0E96E /* KYCurveRenderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYCurveRenderView.h; sourceTree = "<group>"; };
 		AC3B710C1EF167BE00A0E96E /* KYCurveRenderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYCurveRenderView.m; sourceTree = "<group>"; };
-		AC3B710E1EF167BE00A0E96E /* KYCurveChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYCurveChartView.h; sourceTree = "<group>"; };
 		AC3B710F1EF167BE00A0E96E /* KYCurveChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYCurveChartView.m; sourceTree = "<group>"; };
-		AC3B711C1EF167E800A0E96E /* KYPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYPlot.h; sourceTree = "<group>"; };
 		AC3B711D1EF167E800A0E96E /* KYPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYPlot.m; sourceTree = "<group>"; };
 		AC3B711E1EF167E800A0E96E /* KYYAxisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYYAxisView.h; sourceTree = "<group>"; };
 		AC3B711F1EF167E800A0E96E /* KYYAxisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYYAxisView.m; sourceTree = "<group>"; };
@@ -69,6 +69,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC0611101EF6359A00936934 /* PublicInclude */ = {
+			isa = PBXGroup;
+			children = (
+				AC0611111EF6359A00936934 /* KYAxis.h */,
+				AC0611121EF6359A00936934 /* KYCurveChartView.h */,
+				AC0611131EF6359A00936934 /* KYPlot.h */,
+			);
+			path = PublicInclude;
+			sourceTree = "<group>";
+		};
 		AC3B70C51EF165E200A0E96E = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 		AC3B71061EF167BE00A0E96E /* SourceCode */ = {
 			isa = PBXGroup;
 			children = (
+				AC0611101EF6359A00936934 /* PublicInclude */,
 				AC3B71071EF167BE00A0E96E /* Common */,
 				AC3B710A1EF167BE00A0E96E /* CurveChart */,
 			);
@@ -136,9 +147,7 @@
 				AC3B71221EF1682600A0E96E /* KYChartDefine.h */,
 				AC3B71231EF1682600A0E96E /* KYLineFitter.h */,
 				AC3B71241EF1682600A0E96E /* KYLineFitter.m */,
-				AC3B711C1EF167E800A0E96E /* KYPlot.h */,
 				AC3B711D1EF167E800A0E96E /* KYPlot.m */,
-				AC3B71081EF167BE00A0E96E /* KYAxis.h */,
 				AC3B71091EF167BE00A0E96E /* KYAxis.m */,
 				AC3B712B1EF1738B00A0E96E /* KYXAxisView.h */,
 				AC3B712C1EF1738B00A0E96E /* KYXAxisView.m */,
@@ -155,7 +164,6 @@
 			children = (
 				AC3B710B1EF167BE00A0E96E /* KYCurveRenderView.h */,
 				AC3B710C1EF167BE00A0E96E /* KYCurveRenderView.m */,
-				AC3B710E1EF167BE00A0E96E /* KYCurveChartView.h */,
 				AC3B710F1EF167BE00A0E96E /* KYCurveChartView.m */,
 			);
 			path = CurveChart;
