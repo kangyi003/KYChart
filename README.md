@@ -6,3 +6,5 @@
 pod 'KYChart'
 
 使用方法参考项目
+
+![](https://github.com/kangyi003/KYChart/tree/master/ScreenShot/lineChart.jpeg)  
