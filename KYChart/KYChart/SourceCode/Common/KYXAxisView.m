@@ -60,6 +60,7 @@
 
 }
 
+//x轴上的刻度
 - (void)drawNodeTitlesWithContext:(CGContextRef)context{
     CGPoint beginPoint = CGPointMake(0, self.bounds.size.height - defaultXAxisHeight + 20);
 

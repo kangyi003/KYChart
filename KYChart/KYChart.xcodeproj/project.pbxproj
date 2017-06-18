@@ -29,6 +29,7 @@
 		AC0611111EF6359A00936934 /* KYAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYAxis.h; sourceTree = "<group>"; };
 		AC0611121EF6359A00936934 /* KYCurveChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYCurveChartView.h; sourceTree = "<group>"; };
 		AC0611131EF6359A00936934 /* KYPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYPlot.h; sourceTree = "<group>"; };
+		AC0611531EF65FCB00936934 /* KYChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KYChart.h; sourceTree = "<group>"; };
 		AC392DE51EF27CDE007875D0 /* KYTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYTipView.h; sourceTree = "<group>"; };
 		AC392DE61EF27CDE007875D0 /* KYTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYTipView.m; sourceTree = "<group>"; };
 		AC3B70CE1EF165E200A0E96E /* KYChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KYChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +76,7 @@
 				AC0611111EF6359A00936934 /* KYAxis.h */,
 				AC0611121EF6359A00936934 /* KYCurveChartView.h */,
 				AC0611131EF6359A00936934 /* KYPlot.h */,
+				AC0611531EF65FCB00936934 /* KYChart.h */,
 			);
 			path = PublicInclude;
 			sourceTree = "<group>";
