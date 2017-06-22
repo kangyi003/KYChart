@@ -40,14 +40,11 @@ NSArray<NSValue *> * beelineFitting(NSArray<NSValue *> *points)
         b = 0;
     }
     
-    CGPoint poi1 = [points.firstObject CGPointValue];
-    CGPoint poi2 = [points.lastObject CGPointValue];
-    
-    double y1 = a *poi1.x + b;
-    double y2 = a *poi2.x + b;
-    
-    CGPoint p1 = CGPointMake(poi1.x, y1);
-    CGPoint p2 = CGPointMake(poi2.x, y2);
-    NSArray *retArray = @[[NSValue valueWithCGPoint:p1],[NSValue valueWithCGPoint:p2]];
-    return retArray;
+    NSMutableArray *retArray = [NSMutableArray array];
+    for (NSValue *value in points) {
+        CGPoint point = [value CGPointValue];
+        double y = a *point.x + b;
+        [retArray addObject:[NSValue valueWithCGPoint:CGPointMake(point.x, y)]];
+    }
+    return [retArray copy];
 }

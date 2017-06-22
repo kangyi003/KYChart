@@ -104,12 +104,12 @@
                 [titles addObject:[NSString stringWithFormat:@"%.1f",self.minYNodeValue + _nodesDeltaValue*i]];
         }else if (self.nodesDeltaValue >= 0.1 && self.nodesDeltaValue < 1){
             if (_showPercentage) {
-                [titles addObject:[NSString stringWithFormat:@"%.2f%%",(self.minYNodeValue + _nodesDeltaValue*i) * 100]];
+                [titles addObject:[NSString stringWithFormat:@"%.0f%%",(self.minYNodeValue + _nodesDeltaValue*i) * 100]];
             }else
                 [titles addObject:[NSString stringWithFormat:@"%.2f",self.minYNodeValue + _nodesDeltaValue*i]];
         }else if (self.nodesDeltaValue >= 0.01 && self.nodesDeltaValue < 0.1){
             if (_showPercentage) {
-                [titles addObject:[NSString stringWithFormat:@"%.2f%%",(self.minYNodeValue + _nodesDeltaValue*i) * 100]];
+                [titles addObject:[NSString stringWithFormat:@"%.1f%%",(self.minYNodeValue + _nodesDeltaValue*i) * 100]];
             }else
                 [titles addObject:[NSString stringWithFormat:@"%.3f",self.minYNodeValue + _nodesDeltaValue*i]];
         }else if (self.nodesDeltaValue >= 0.001 && self.nodesDeltaValue < 0.01){
@@ -120,7 +120,7 @@
         }
         else{
             if (_showPercentage) {
-                [titles addObject:[NSString stringWithFormat:@"%.4f%%",(self.minYNodeValue + _nodesDeltaValue*i) * 100]];
+                [titles addObject:[NSString stringWithFormat:@"%.3f%%",(self.minYNodeValue + _nodesDeltaValue*i) * 100]];
             }else
                 [titles addObject:[NSString stringWithFormat:@"%.5f",self.minYNodeValue + _nodesDeltaValue*i]];
         }
@@ -141,8 +141,8 @@
     }else
         _nodesDeltaValue = ((int)(baseNum / 100 + 1)) * power;//最大位进1
     // 计算最小坐标刻度值
-    NSString *minValue = [NSString stringWithFormat:@"%.0f",fabs(self.minValue)];
-    _minYNodeValue = (int)((minValue.integerValue) / _nodesDeltaValue) * _nodesDeltaValue;
+    NSString *minValue = [NSString stringWithFormat:@"%.6f",fabs(self.minValue)];
+    _minYNodeValue = (int)(minValue.floatValue / _nodesDeltaValue) * _nodesDeltaValue;
     _minYNodeValue = self.minValue >= 0 ? _minYNodeValue : - _minYNodeValue - _nodesDeltaValue;
     self.nodeCount = (self.maxValue - self.minYNodeValue) / _nodesDeltaValue + 2;
 }

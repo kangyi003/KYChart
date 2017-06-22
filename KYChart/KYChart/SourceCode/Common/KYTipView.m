@@ -117,7 +117,7 @@
     CGMutablePathRef path = CGPathCreateMutable();
     if (self.showAtLeft) {
         CGPathMoveToPoint(path, nil, self.bounds.size.width, self.bounds.size.height);
-        CGPathAddLineToPoint(path, nil, self.bounds.size.width, 0);
+        CGPathAddArcToPoint(path, nil, self.bounds.size.width, self.bounds.size.height, self.bounds.size.width, 0, radius);
         CGPathAddArcToPoint(path, nil, self.bounds.size.width, 0, 0, 0, radius);
         CGPathAddArcToPoint(path, nil, 0, 0, 0, size.height, radius);
         CGPathAddArcToPoint(path, nil, 0, size.height, size.width - 5, size.height, radius);

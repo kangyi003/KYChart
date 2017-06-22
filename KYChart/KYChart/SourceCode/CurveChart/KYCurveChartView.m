@@ -64,19 +64,19 @@
     [self.yAxisView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.scrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
 
-    NSLayoutConstraint *constraintTop = [NSLayoutConstraint constraintWithItem:_yAxisView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:margin];
-        NSLayoutConstraint *constraintBottom = [NSLayoutConstraint constraintWithItem:_yAxisView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-margin];
-        NSLayoutConstraint *constraintLeft = [NSLayoutConstraint constraintWithItem:_yAxisView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1.0 constant:margin];
+    NSLayoutConstraint *constraintTop = [NSLayoutConstraint constraintWithItem:_yAxisView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+        NSLayoutConstraint *constraintBottom = [NSLayoutConstraint constraintWithItem:_yAxisView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
+        NSLayoutConstraint *constraintLeft = [NSLayoutConstraint constraintWithItem:_yAxisView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
         _yWidthConstraint = [NSLayoutConstraint constraintWithItem:_yAxisView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:self.yAxisWidth];
     [self addConstraint:constraintTop];
     [self addConstraint:constraintBottom];
     [self addConstraint:constraintLeft];
     [self addConstraint:_yWidthConstraint];
     
-    NSLayoutConstraint *constraintTop1 = [NSLayoutConstraint constraintWithItem:_scrollView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:margin];
-    NSLayoutConstraint *constraintBottom1 = [NSLayoutConstraint constraintWithItem:_scrollView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-margin];
+    NSLayoutConstraint *constraintTop1 = [NSLayoutConstraint constraintWithItem:_scrollView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    NSLayoutConstraint *constraintBottom1 = [NSLayoutConstraint constraintWithItem:_scrollView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
     NSLayoutConstraint *constraintLeft1 = [NSLayoutConstraint constraintWithItem:_scrollView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:_yAxisView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0];
-    NSLayoutConstraint *constraintRight = [NSLayoutConstraint constraintWithItem:_scrollView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1.0 constant:-margin];
+    NSLayoutConstraint *constraintRight = [NSLayoutConstraint constraintWithItem:_scrollView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1.0 constant:0];
     [self addConstraint:constraintTop1];
     [self addConstraint:constraintBottom1];
     [self addConstraint:constraintLeft1];

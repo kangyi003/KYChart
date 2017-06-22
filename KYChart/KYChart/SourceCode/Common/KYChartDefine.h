@@ -24,12 +24,15 @@ typedef NS_ENUM(NSInteger,KYChartType) {
 #define defaultYAxisWidth 50
 
 // 图表距上边界距离
-#define KYChartTopMargin 40
+#define KYChartTopMargin 30
 
 // y轴刻度点数，如果正负值都有，就是值比较大的一端的刻度数
 #define defaultYNodeCount 5
 
 /// 曲线图x轴刻度默认间距
 #define defaultXNodeGap 40
+
+// 数据点的半半径
+#define pointRadius 4
 
 #endif /* KYCuuveChartDefine_h */
