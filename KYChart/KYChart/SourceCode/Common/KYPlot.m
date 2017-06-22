@@ -9,7 +9,7 @@
 #import "KYPlot.h"
 #import "KYLineFitter.h"
 
-#define defaultPlotColor [UIColor colorWithRed:99/255.0 green:99/255.0 blue:99/255.0 alpha:1]
+#define defaultPlotColor [UIColor blueColor]
 #define defaultTrendColor [UIColor redColor]
 
 @implementation KYPlot

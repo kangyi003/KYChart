@@ -75,30 +75,31 @@
 
 - (IBAction)onePlot:(id)sender{
     [self.chartView removeAllPlots];
-    NSArray *values = @[[NSValue valueWithCGPoint:CGPointMake(0, 234343434)],
-                         [NSValue valueWithCGPoint:CGPointMake(1, 533434343)],
-                         [NSValue valueWithCGPoint:CGPointMake(2, 633434343)],
-                         [NSValue valueWithCGPoint:CGPointMake(3, 333434343)],
-                         [NSValue valueWithCGPoint:CGPointMake(4, 833434343)],
-                         [NSValue valueWithCGPoint:CGPointMake(5, 533434343)],
-                         [NSValue valueWithCGPoint:CGPointMake(6, 633434343)],
-                         [NSValue valueWithCGPoint:CGPointMake(7, 933434343)]];
+    NSArray *values = @[[NSValue valueWithCGPoint:CGPointMake(0, 0.00234343434)],
+                         [NSValue valueWithCGPoint:CGPointMake(1, 0.00533434343)],
+                         [NSValue valueWithCGPoint:CGPointMake(2, 0.00633434343)],
+                         [NSValue valueWithCGPoint:CGPointMake(3, 0.00333434343)],
+                         [NSValue valueWithCGPoint:CGPointMake(4, 0.00833434343)],
+                         [NSValue valueWithCGPoint:CGPointMake(5, 0.00533434343)],
+                         [NSValue valueWithCGPoint:CGPointMake(6, 0.00633434343)],
+                         [NSValue valueWithCGPoint:CGPointMake(7, 0.00933434343)]];
     NSMutableArray *titles = [NSMutableArray array];
     for (int i = 0; i < values.count; i++) {
         CGPoint point = [values[i] CGPointValue];
         [titles addObject:[NSString stringWithFormat:@"%.0f天",point.x]];
     }
     KYXAxis *xAxis = [[KYXAxis alloc] initWithNodeTitles:titles];
-    KYYAxis *yAxis = [[KYYAxis alloc] initWithMaxValue:933434343 minValue:0];
+    KYYAxis *yAxis = [[KYYAxis alloc] initWithMaxValue:0.00933434343 minValue:0.00234343434];
     self.chartView.xAxis = xAxis;
     self.chartView.yAxis = yAxis;
     self.chartView.yAxisWidth = 100;
-    self.chartView.showAnimation = NO;
-    
+    self.chartView.showAnimation = YES;
+    yAxis.showPercentage = YES;
+
     self.plot = [[KYPlot alloc] initWithMark:@"2017年" points:values];
     self.plot.lineColor = [UIColor blueColor];
     self.plot.showTrendLine = YES;
-
+    self.plot.showCurve = YES;
     [self.chartView addPlot:self.plot];
     [self.chartView reloadPlots];
 }

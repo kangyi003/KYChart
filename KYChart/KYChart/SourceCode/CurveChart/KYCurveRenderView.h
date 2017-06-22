@@ -25,6 +25,9 @@
 /// 是否显示动画
 @property (nonatomic,assign)BOOL showAnimation;
 
+///是否显示实心点
+@property (nonatomic,assign)BOOL showSolidPoint;
+
 - (CGSize)contentSize;
 
 

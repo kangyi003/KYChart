@@ -129,15 +129,16 @@
     
     CGPoint pointInView = points[0];
     CGPoint prePoint = points[0];
-    CGPathMoveToPoint(path, nil, pointInView.x, pointInView.y);
+    CGPathMoveToPoint(path, nil, pointInView.x+2, pointInView.y);
     for (int i = 1; i < plot.points.count; i++) {
         pointInView = points[i];
         if (plot.showCurve) {
-            CGPathAddCurveToPoint(path, nil, (pointInView.x-prePoint.x)/2+prePoint.x, prePoint.y, (pointInView.x-prePoint.x)/2+prePoint.x, pointInView.y, pointInView.x, pointInView.y);
+            CGPathAddCurveToPoint(path, nil, (pointInView.x-prePoint.x)/2+prePoint.x, prePoint.y, (pointInView.x-prePoint.x)/2+prePoint.x, pointInView.y, pointInView.x-2, pointInView.y);
         }else{
-            CGPathAddLineToPoint(path, nil, pointInView.x, pointInView.y);
+            CGPathAddLineToPoint(path, nil, pointInView.x-2, pointInView.y);
             prePoint = pointInView;
         }
+        CGPathMoveToPoint(path, nil, pointInView.x + 2, pointInView.y);
         prePoint = pointInView;
     }
     UIBezierPath *retPath = [UIBezierPath bezierPathWithCGPath:path];
@@ -338,17 +339,26 @@
 - (void)drawPlot:(KYPlot *)plot withContext:(CGContextRef)context{
     CGContextSaveGState(context);
     CGContextSetStrokeColorWithColor(context, plot.pointColor.CGColor);
-    CGContextSetLineWidth(context, 0.5);
+    CGContextSetFillColorWithColor(context, plot.pointColor.CGColor);
+    CGContextSetLineWidth(context, 1);
     CGPoint beginPoint = [plot.points[0] CGPointValue];
     CGPoint pointInView = CGPointMake(self.xAxis.nodeGap / 2,
                                       self.bounds.size.height  -((beginPoint.y - self.yAxis.minYNodeValue)/ self.yAxis.nodesDeltaValue) * [self nodeGap]);
     //绘制点
-    CGContextFillEllipseInRect(context, CGRectMake(pointInView.x - 2, pointInView.y - 2, 4, 4));
+    if (_showSolidPoint) {
+        CGContextFillEllipseInRect(context, CGRectMake(pointInView.x - 2, pointInView.y - 2, 4, 4));
+    }else{
+        CGContextStrokeEllipseInRect(context, CGRectMake(pointInView.x - 2, pointInView.y - 2, 4, 4));
+    }
     for (int i = 1; i < plot.points.count; i++) {
         CGPoint point = [plot.points[i] CGPointValue];
         pointInView = CGPointMake(self.xAxis.nodeGap / 2 + i * self.xAxis.nodeGap,
                                   self.bounds.size.height  -((point.y - self.yAxis.minYNodeValue)/ self.yAxis.nodesDeltaValue) * [self nodeGap]);
-        CGContextFillEllipseInRect(context, CGRectMake(pointInView.x - 2, pointInView.y - 2, 4, 4));
+        if (_showSolidPoint) {
+            CGContextFillEllipseInRect(context, CGRectMake(pointInView.x - 2, pointInView.y - 2, 4, 4));
+        }else{
+            CGContextStrokeEllipseInRect(context, CGRectMake(pointInView.x - 2, pointInView.y - 2, 4, 4));
+        }
     }
     CGContextRestoreGState(context);
 }

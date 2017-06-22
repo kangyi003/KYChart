@@ -92,16 +92,37 @@
 - (NSArray *)nodeTitles{
     NSMutableArray *titles = [NSMutableArray array];
     for (int i = 0; i < self.nodeCount; i++) {
-        if (self.nodesDeltaValue > 10) {
+        if (self.nodesDeltaValue >= 10) {
             if (_showPercentage) {
                 [titles addObject:[NSString stringWithFormat:@"%.0f%%",(self.minYNodeValue + _nodesDeltaValue*i) * 100]];
             }else
-            [titles addObject:[NSString stringWithFormat:@"%.0f",self.minYNodeValue + _nodesDeltaValue*i]];
-        }else{
+                [titles addObject:[NSString stringWithFormat:@"%.0f",self.minYNodeValue + _nodesDeltaValue*i]];
+        }else if (self.nodesDeltaValue >= 1 && self.nodesDeltaValue < 10){
             if (_showPercentage) {
                 [titles addObject:[NSString stringWithFormat:@"%.0f%%",(self.minYNodeValue + _nodesDeltaValue*i) * 100]];
             }else
-            [titles addObject:[NSString stringWithFormat:@"%.2f",self.minYNodeValue + _nodesDeltaValue*i]];
+                [titles addObject:[NSString stringWithFormat:@"%.1f",self.minYNodeValue + _nodesDeltaValue*i]];
+        }else if (self.nodesDeltaValue >= 0.1 && self.nodesDeltaValue < 1){
+            if (_showPercentage) {
+                [titles addObject:[NSString stringWithFormat:@"%.2f%%",(self.minYNodeValue + _nodesDeltaValue*i) * 100]];
+            }else
+                [titles addObject:[NSString stringWithFormat:@"%.2f",self.minYNodeValue + _nodesDeltaValue*i]];
+        }else if (self.nodesDeltaValue >= 0.01 && self.nodesDeltaValue < 0.1){
+            if (_showPercentage) {
+                [titles addObject:[NSString stringWithFormat:@"%.2f%%",(self.minYNodeValue + _nodesDeltaValue*i) * 100]];
+            }else
+                [titles addObject:[NSString stringWithFormat:@"%.3f",self.minYNodeValue + _nodesDeltaValue*i]];
+        }else if (self.nodesDeltaValue >= 0.001 && self.nodesDeltaValue < 0.01){
+            if (_showPercentage) {
+                [titles addObject:[NSString stringWithFormat:@"%.2f%%",(self.minYNodeValue + _nodesDeltaValue*i) * 100]];
+            }else
+                [titles addObject:[NSString stringWithFormat:@"%.4f",self.minYNodeValue + _nodesDeltaValue*i]];
+        }
+        else{
+            if (_showPercentage) {
+                [titles addObject:[NSString stringWithFormat:@"%.4f%%",(self.minYNodeValue + _nodesDeltaValue*i) * 100]];
+            }else
+                [titles addObject:[NSString stringWithFormat:@"%.5f",self.minYNodeValue + _nodesDeltaValue*i]];
         }
     }
     return [titles copy];
